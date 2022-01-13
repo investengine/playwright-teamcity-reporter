@@ -1,0 +1,19 @@
+{
+  "name": "playwright-teamcity-reporter",
+  "version": "1.0.0",
+  "description": "Playwright reporter for TeamCity CI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/investengine/playwright-teamcity-reporter.git"
+  },
+  "author": "Roman Sabirov roma219@yandex.ru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/investengine/playwright-teamcity-reporter/issues"
+  },
+  "homepage": "https://github.com/investengine/playwright-teamcity-reporter#readme"
+}
