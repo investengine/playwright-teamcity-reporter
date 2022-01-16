@@ -12,9 +12,11 @@ npm i -D playwright-teamcity-reporter
 
 ## Usage
 
-Create a reporter.js file which should import `createReporter` function, which is used to create your custom reporter with options provided.
+Create a `reporter.js` file which should import `createReporter` function, which is used to create your custom reporter with options provided.
 
 ```
+// reporter.js
+
 import { createReporter } from 'teamcity-reporter'
 
 const reporter = createReporter({
