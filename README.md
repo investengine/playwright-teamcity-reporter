@@ -7,7 +7,7 @@ Custom reporter to integrate Playwright test runner with TeamCity CI.
 ## Installation
 
 ```
-npm i -D playwright-teamcity-reporter
+npm i -D @investengine/playwright-teamcity-reporter
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Create a `reporter.js` file which should import `createReporter` function, which
 ```
 // reporter.js
 
-import { createReporter } from 'teamcity-reporter'
+import { createReporter } from '@investengine/playwright-teamcity-reporter'
 
 const reporter = createReporter({
   artifactsFolder: 'e2e/artifacts/'
