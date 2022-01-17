@@ -20,6 +20,8 @@ Create a `reporter.js` file which should import `createReporter` function, which
 import { createReporter } from '@investengine/playwright-teamcity-reporter'
 
 const reporter = createReporter({
+  // provide options here if necessary
+
   artifactsFolder: 'e2e/artifacts/'
 })
 
