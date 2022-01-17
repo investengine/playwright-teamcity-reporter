@@ -1,7 +1,8 @@
 {
-  "name": "playwright-teamcity-reporter",
+  "name": "@investengine/playwright-teamcity-reporter",
   "version": "0.0.1",
   "description": "Playwright reporter for TeamCity CI",
+  "keywords": ["playwright", "teamcity"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
