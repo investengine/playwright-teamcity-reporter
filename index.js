@@ -53,9 +53,14 @@ class TeamCityReporter {
           }
           console.log(`##teamcity[testMetadata testName='${testName}' name='Failed at step' value='${stepName}']`)
         }
-        if (this.artifactsFolder && result.attachments[0]) {
-          const videoPath = `e2e/${result.attachments[0].path.split(this.artifactsFolder).pop()}`
-          console.log(`##teamcity[testMetadata testName='${testName}' type='video' value='${videoPath}']`)
+        if (this.artifactsFolder && result.attachments) {
+          result.attachments.forEach(attachment => {
+            let contentType;
+            if (attachment.contentType.includes('video')) contentType = 'video'
+            if (attachment.contentType.includes('image')) contentType = 'image'
+            const attachmentPath = `e2e/${attachment.path.split(this.artifactsFolder).pop()}`
+            console.log(`##teamcity[testMetadata testName='${testName}' type='${contentType}' value='${attachmentPath}']`)
+          })
         }
         break
       case 'passed':
