@@ -43,7 +43,7 @@ See [Using Reporters in CI Playwright docs](https://playwright.dev/docs/test-rep
 
 ## List of options
 
-- `artifactsFolder` [optional] - path to the artifacts folder. Should duplicate `outputDir` parameter in your `playwright.config.js`. Used to provide videofile metadata of failed tests to TeamCity.
+- `artifactsFolder` [optional] - path to the artifacts folder. Should duplicate `outputDir` parameter in your `playwright.config.js`. Used to provide image/video metadata of failed tests to TeamCity.
 
 ## Feature requests
 
