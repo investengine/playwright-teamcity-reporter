@@ -55,11 +55,13 @@ class TeamCityReporter {
         }
         if (this.artifactsFolder && result.attachments) {
           result.attachments.forEach(attachment => {
-            let contentType;
+            let contentType = '';
             if (attachment.contentType.includes('video')) contentType = 'video'
             if (attachment.contentType.includes('image')) contentType = 'image'
+            if (attachment.contentType.includes('application')) contentType = 'trace'
+            const metaDataName = contentType.charAt(0).toUpperCase() + contentType.slice(1);
             const attachmentPath = `e2e/${attachment.path.split(this.artifactsFolder).pop()}`
-            console.log(`##teamcity[testMetadata testName='${testName}' type='${contentType}' value='${attachmentPath}']`)
+            console.log(`##teamcity[testMetadata testName='${testName}' name='${metaDataName}' type='${contentType}' value='${attachmentPath}']`)
           })
         }
         break
