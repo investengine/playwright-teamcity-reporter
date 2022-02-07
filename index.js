@@ -61,7 +61,7 @@ class TeamCityReporter {
             if (attachment.contentType.includes('application')) contentType = 'trace'
             const metaDataName = contentType.charAt(0).toUpperCase() + contentType.slice(1);
             const attachmentPath = `e2e/${attachment.path.split(this.artifactsFolder).pop()}`
-            console.log(`##teamcity[testMetadata testName='${testName}' name='${metaDataName}' type='${contentType}' value='${attachmentPath}']`)
+            console.log(`##teamcity[testMetadata testName='${testName}' name='${metaDataName}' type='${contentType === 'trace' ? 'Artifact' : contentType}' value='${attachmentPath}']`)
           })
         }
         break
