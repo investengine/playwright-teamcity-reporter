@@ -38,11 +38,12 @@ class TeamCityReporter {
         break
       case 'failed':
       case 'timedOut':
+        const errorMessage = result.error && result.error.stack || 'Unknown error'
 
         console.log(
           `##teamcity[testFailed name='${testName}' message='${this.escape(
-            result.error.stack,
-          )}' description='${this.escape(result.error.stack)}' flowId='${this.flowId}']`,
+            errorMessage,
+          )}' description='${this.escape(errorMessage)}' flowId='${this.flowId}']`,
         )
         const failedStep = result.steps.find(step => step.category === 'test.step' && step.error)
         if (failedStep && failedStep.title) {
