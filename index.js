@@ -61,6 +61,7 @@ class TeamCityReporter {
         if (this.artifactsFolder && result.attachments) {
           result.attachments.forEach(attachment => {
             let contentType = '';
+            if (attachment.contentType.includes('allure')) return
             if (attachment.contentType.includes('video')) contentType = 'video'
             if (attachment.contentType.includes('image')) contentType = 'image'
             if (attachment.contentType.includes('application')) contentType = 'trace'
