@@ -45,9 +45,7 @@ class TeamCityReporter {
         )
 
         console.log(
-          `##teamcity[testFailed name='${testName}' message='${this.escape(errorMessage)}' details='${this.escape(
-            errorDescription,
-          )}' flowId='${this.flowId}']`,
+          `##teamcity[testFailed name='${testName}' message='${this.escape(errorMessage)}' details='${this.escape(errorDescription)}' flowId='${this.flowId}']`,
         )
         const failedStep = result.steps.find((step) => step.category === 'test.step' && step.error)
 
