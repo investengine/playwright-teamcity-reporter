@@ -38,7 +38,6 @@ class TeamCityReporter {
         break
       case 'failed':
       case 'timedOut':
-        console.log(result)
         const errorMessage = result.error.message
         const errorDetails = result.error.stack || ''
 
