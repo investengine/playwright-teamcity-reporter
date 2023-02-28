@@ -56,6 +56,7 @@ class TeamCityReporter {
             const subStep = failedStep.steps.find(step => step.category === 'test.step' && step.error)
             if (subStep) stepName = `${stepName} > ${subStep.title}`
           }
+          stepName = this.escape(stepName)
           console.log(`##teamcity[testMetadata testName='${testName}' name='Failed at step' value='${stepName}']`)
         }
         if (this.artifactsFolder && result.attachments) {
