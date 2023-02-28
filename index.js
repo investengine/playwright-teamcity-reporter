@@ -57,7 +57,9 @@ class TeamCityReporter {
 
             if (subStep) stepName = `${stepName} > ${subStep.title}`
           }
+
           stepName = this.escape(stepName)
+          
           console.log(
             `##teamcity[testMetadata testName='${testName}' name='Failed at step' value='${stepName}' flowId='${this.flowId}']`,
           )
